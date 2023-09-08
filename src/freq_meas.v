@@ -57,6 +57,7 @@ module tt_um_spehro_freq_meas #( parameter MAX_COUNT = 24'd10_000_000 ) (
 	wire n10_50 = ui_in[1];
    	wire out_1000kHzt;
        wire latchitt; 
+	wire reset_ctrt; 
 
 // module freq_meas(
     // input fpga_clk,
