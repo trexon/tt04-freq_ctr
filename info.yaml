@@ -60,14 +60,14 @@ documentation:
     - dot (not used) 
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
-    - digit 0 (LSD) drive (active low)  
-    -  " 1
-    -  " 2
-    -  " 3
-    -  " 4
-    -  " 5
-    -  " 6
-    -  " 7 (MSD) 
+    -  digit 0 (LSD) drive (active low)  
+    -  digit 1
+    -  digit 2
+    -  digit 3
+    -  digit 4
+    -  digit 5
+    -  digit 6
+    -  digit 7 (MSD) 
 
 # The following fields are optional
   tag:          "experiment"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
