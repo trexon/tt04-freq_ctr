@@ -29,14 +29,14 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      A simple frequency counter that should work up to close to clock frequency/2 with an 8-digit LED display 7-segment drive 
+      "A simple frequency counter that should work up to close to clock frequency/2 with an 8-digit LED display 7-segment drive"
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-     Connect an 8-digit common anode LED display to the digit drive and sev_segment ports. Both are active low drive so 
+     "Connect an 8-digit common anode LED display to the digit drive and sev_segment ports. Both are active low drive so 
      PNP transistors or P-channel MOSFETs are required to drive each digit (max 8) 
      Apply a clock, ideally 50MHz, but if TT4 can't support that, then 10MHz, input n10_50 selects (low for 10MHz clock, high for 50MHz)
-     Apply a signal to be measured and the multiplexed display should show the frequency 
+     Apply a signal to be measured and the multiplexed display should show the frequency "
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
