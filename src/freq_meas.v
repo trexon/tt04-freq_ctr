@@ -55,7 +55,7 @@ module tt_um_spehro_freq_meas #( parameter MAX_COUNT = 24'd10_000_000 ) (
 	assign uo_out = sev_segments; 
 	wire signal = ui_in[0];
 	wire n10_50 = ui_in[1];
-   	
+   	wire out_1000kHzt;
 
 
 // module freq_meas(
