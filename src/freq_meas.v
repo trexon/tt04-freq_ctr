@@ -170,12 +170,12 @@ always @ (posedge out_1000kHz or negedge nreset)
 				if ((digit_dwell_counter < 5 )  || (digit_dwell_counter > 119)) 
 				     digit_drives <= 'hff;   // 10 us blanking to prevent ghosting 
 			   else 
-                 if (mux_counter  < 'h06) 
-					     digit_drives <= ~('h80 >> (mux_counter +2) );  // board test 
-                 else 
-					     digit_drives <= 'hff; 
+//                 if (mux_counter  < 'h06) 
+//					     digit_drives <= ~('h80 >> (mux_counter +2) );  // board test 
+//                 else 
+//					     digit_drives <= 'hff; 
 
-					//  digit_drives <= ~('h01 << mux_counter);   // for ASIC
+					  digit_drives <= ~('h01 << mux_counter);   // for ASIC
 			   if (digit_dwell_counter == 124)
 				   begin
 					  digit_dwell_counter <= 0; 
