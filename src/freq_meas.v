@@ -58,6 +58,7 @@ module tt_um_spehro_freq_meas #( parameter MAX_COUNT = 24'd10_000_000 ) (
    	wire out_1000kHzt;
        wire latchitt; 
 	wire reset_ctrt; 
+	wire [19:0] timebase_countert;
 
 // module freq_meas(
     // input fpga_clk,
