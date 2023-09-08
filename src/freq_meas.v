@@ -41,6 +41,7 @@ module tt_um_spehro_freq_meas #( parameter MAX_COUNT = 24'd10_000_000 ) (
     wire fpga_clk = clk; 
     wire [7:0] digit_drive; 
 	wire [7:0] sev_segments; 
+    wire carry_out;
 	
     // wire [6:0] led_out;
     // assign uo_out[6:0] = led_out;
