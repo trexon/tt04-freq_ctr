@@ -6,9 +6,10 @@ project:
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
 #  source_files:        
-#    - counter.v
-#    - decoder.v
-#  top_module:  "tt_um_example"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
+#    - freq_meas.v
+#    - bcd_counter.v
+#    - bcd_digit.v 
+#  top_module:  "tt_spehro_freq_meas"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
 
 # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"    # Valid values: 1x1, 1x2, 2x2, 4x2 or 8x2
@@ -21,22 +22,25 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
-  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  author:       "Spehro"      # Your name
+  title:        "Frequency counter"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "simple frequency counter"      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Explain how your project works
+      A simple frequency counter that should work up to close to clock frequency/2 with an 8-digit LED display 7-segment drive 
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+     Connect an 8-digit common anode LED display to the digit drive and sev_segment ports. Both are active low drive so 
+     PNP transistors or P-channel MOSFETs are required to drive each digit (max 8) 
+     Apply a clock, ideally 50MHz, but if TT4 can't support that, then 10MHz, input n10_50 selects (low for 10MHz clock, high for 50MHz)
+     Apply a signal to be measured and the multiplexed display should show the frequency 
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - none
+    - n10_50 pull low for 10MHz clock, high for 50MHz. 
     - none
     - none
     - none
@@ -53,17 +57,17 @@ documentation:
     - segment e
     - segment f
     - segment g
-    - dot
+    - dot (not used) 
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - digit 0 (LSD) drive (active low)  
+    -  " 1
+    -  " 2
+    -  " 3
+    -  " 4
+    -  " 5
+    -  " 6
+    -  " 7 (MSD) 
 
 # The following fields are optional
   tag:          ""      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
